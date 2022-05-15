@@ -6,11 +6,11 @@ import javax.servlet.http.HttpServletResponse;
 import kr.siat.boardservice.boardInsertServiceImpl;
 import kr.siat.boardservice.boardListServiceImpl;
 import kr.siat.controller.ModelAndView;
-import movieservice.movieDetailServiceImpl;
-import movieservice.movieInsertServiceImpl;
-import movieservice.movieListServiceImpl;
-import movieservice.movieModifyServiceImpl;
-import movieservice.movieWatchServiceImpl;
+import kr.siat.movieservice.movieDetailServiceImpl;
+import kr.siat.movieservice.movieInsertServiceImpl;
+import kr.siat.movieservice.movieListServiceImpl;
+import kr.siat.movieservice.movieModifyServiceImpl;
+import kr.siat.movieservice.movieWatchServiceImpl;
 
 public class movieController implements Controller {
 

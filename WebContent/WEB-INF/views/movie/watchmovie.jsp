@@ -4,7 +4,7 @@
     <%@ include file="/inc/top.jsp"%>
     <%@page import="java.util.ArrayList"%>
 
-    <%@page import="MovieModel.MovieDTO"%>
+    <%@page import="kr.siat.model.MovieDTO"%>
     
        <%
 MovieDTO dto = new MovieDTO();

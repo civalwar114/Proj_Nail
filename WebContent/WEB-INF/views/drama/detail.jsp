@@ -4,7 +4,7 @@
     <%@ include file="/inc/top.jsp"%>
     <%@page import="java.util.ArrayList"%>
 
-    <%@page import="DramaModel.dramaDTO"%>
+    <%@page import="kr.siat.model.dramaDTO"%>
     
        <%
 dramaDTO dto = new dramaDTO();
@@ -31,7 +31,7 @@ dramaDTO dto = new dramaDTO();
               <li class="breadcrumb-item"><a href="category.drama">목록 보기</a></li>             
             </ol>
           </nav>         
-          <p>test</p>  
+   
   
 		</div>
  <!-- 여기에 영화 상세 정보? -->
@@ -59,7 +59,17 @@ dramaDTO dto = new dramaDTO();
 	</section>
 	<!-- ================ end banner area ================= -->
 	
-	
+		    <%
+          if(session.getAttribute("user_email")!=null) {
+        	  if((Integer)session.getAttribute("user_type")==0) {
+        	%>          
+            <aside class="single_sidebar_widget author_widget">
+                          <a class="btn btn-primary" href="dramamodify.drama?num=<%=dto.getDramaNum() %>" role="button">수정</a>
+                          <div class="br"></div>
+                      </aside>         
+                      
+                           
+                  <%       	  }          }          %>
 	
 	
 	

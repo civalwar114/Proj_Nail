@@ -4,10 +4,10 @@
     <%@ include file="/inc/top.jsp"%>
     <%@page import="java.util.ArrayList"%>
 
-    <%@page import="MovieModel.MovieDTO"%>
+    <%@page import="kr.siat.model.MovieDTO"%>
     
        <%
-MovieDTO dto = new MovieDTO();
+		MovieDTO dto = new MovieDTO();
        if("GET".equals(request.getMethod())) {
     		dto = (MovieDTO) request.getAttribute("moviedetail");
 
@@ -15,6 +15,7 @@ MovieDTO dto = new MovieDTO();
     	} else if("POST".equals(request.getMethod())) {
     		dto = (MovieDTO) request.getAttribute("movieaftermodify");
     	}
+
        
 %>
     
@@ -26,44 +27,54 @@ MovieDTO dto = new MovieDTO();
 			<div class="blog-banner">
 				<div class="text-center">
 					<h1>Movie Detail</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="category.movie">목록 보기</a></li>             
-            </ol>
+					<nav aria-label="breadcrumb" class="banner-breadcrumb">          
+           				 <ol class="breadcrumb">
+             			 <li class="breadcrumb-item"><a href="category.movie">목록 보기</a>
+            		  </li>             
+          				  </ol>
+            
           </nav>         
-          <p>test</p>  
-  
+     
 		</div>
  <!-- 여기에 영화 상세 정보? -->
-  				<div class="text-center">
-  				 <h2>${movie.movieTitle}</h2>
-   			<div class="col-lg-9 col-md-9 movie_details"  > 
-						<h2><%=dto.getMovieTitle() %></h2>
-						<p class="excert"><%=dto.getMovieGenre() %>               <%=dto.getMovieYear() %></p>
-						<p class="excert"><%=dto.getMovieDirector() %></p>
-						<p class="excert"><%=dto.getMovieAge() %>세 관람가</p>
-						<p class="excert"><%=dto.getMovieContent() %></p>					<!-- 서브타이틀 정도로 쓰기 -->
-					</div>
-   
-  </div>
-   
-   
+  		<div class="text-center">
+  				 	 <h2>${movie.movieTitle}</h2>
+   						<div class="col-lg-9 col-md-9 movie_details"  > 
+							<h2><%=dto.getMovieTitle() %></h2>
+							<p align="center" class="excert">장르 : <%=dto.getMovieGenre()%></p>  
+							<p class="excert"> 개봉 :<%=dto.getMovieYear() %></p>                   
+							<p class="excert">감독:<%=dto.getMovieDirector() %></p>
+							<p class="excert"><%=dto.getMovieAge() %>세 관람가</p>
+							<p> 줄거리 </p>
+							<p class="excert"><%=dto.getMovieContent() %></p>					<!-- 서브타이틀 정도로 쓰기 -->
+						</div>   				 
+  					</div>
    
 			</div>   
+					
 			
     </div>
      
     
-    
  
 	</section>
 	<!-- ================ end banner area ================= -->
+
 	
+	    <%
+          if(session.getAttribute("user_email")!=null) {
+        	  if((Integer)session.getAttribute("user_type")==0) {
+        	%>          
+            <aside class="single_sidebar_widget author_widget">
+                          <a class="btn btn-primary" href="moviemodify.movie?num=<%=dto.getMovieNum() %>" role="button">수정</a>
+                          <div class="br"></div>
+                      </aside>         
+                      
+                           
+                  <%       	  }          }          %>
 	
-	
-	
-	
-	
+		
+
 	
 	
 <%@ include file="/inc/bottom.jsp"%>

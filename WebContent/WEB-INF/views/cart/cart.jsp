@@ -4,68 +4,50 @@
     <%@ include file="/inc/top.jsp"%>
     <%@page import="java.util.ArrayList"%>
 
-    <%@page import="DramaModel.dramaDTO"%>
-    
+    <%@page import="kr.siat.model.dramaDTO"%>
+    <%@page import="kr.siat.model.MovieDTO"%>
+    <%@page import="kr.siat.model.CartDTO"%>
        <%
-dramaDTO dto = new dramaDTO();
-       if("GET".equals(request.getMethod())) {
-    		dto = (dramaDTO) request.getAttribute("dramawatch");
+			ArrayList<CartDTO> cart = null;
+		
+      		 Object obj = session.getAttribute("cart");	//세션 객체에서 cart 값을 가져온다.
 
-    		
-    		session.setAttribute("DramaSessionNum", dto.getDramaNum());
-    	} else if("POST".equals(request.getMethod())) {
-    		dto = (dramaDTO) request.getAttribute("Dramaaftermodify");
-    	}
-       
-%>
-    
-    
-
-<!-- ================ start banner area ================= -->	
-	<section class="blog-banner-area" id="category">
-		<div class="container h-100">
-			<div class="blog-banner">
-				<div class="text-center">
-					<h1>watch drama</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-                      
-            </ol>
-          </nav>         
-          <p>test watch test rama</p>  
+      		 if(obj == null) {	//세션 정보가 없으면 배열을 생성 : 주문한 제품이 없다
+       			cart = new ArrayList<CartDTO>();	
+       			} else {			//세션 정보가 있으면 강제로 캐스팅 : 주문한 제품이 있다
+       				cart = (ArrayList<CartDTO>) obj;
+      			 }
+	
+		%>
   
-		</div>
- <!-- 여기에 영화 상세 정보? -->
-  				<div class="text-center">
-  				 <h2>${drama.movieTitle}</h2>
-   			<div class="col-lg-9 col-md-9 drama_details"  > 
-						<h2><%=dto.getDramaTitle() %></h2>
-									<!-- 서브타이틀 정도로 쓰기 -->
-					</div>
-   
- <a class="button button-blog" >다운로드</a>
-   
-   
-   
-  </div>
-   
-   
-   
-			</div>   
-			
-    </div>
-     
-    
-    
- 
-	</section>
-	<!-- ================ end banner area ================= -->
-	
-	
-	
-	
-	
-	
+ <head>
+<meta charset="UTF-8">
+<title>장바구니</title>
+
+<script type="text/javascript">
+
+
+function fnPay(){
+	alert("결제 기능을 지원하지 않습니다.");
+}
+
+function fnClear(){
+	if(confirm("장바구니를 비우시겠습니까?")) {
+		location.href = "../pro/CartClear.jsp";	
+	}
+}
+
+function fnGo(){
+	location.href = "../../UserMain.jsp";
+}
+</script>
+</head>
+
+
+
+
+
+
 	
 	
 <%@ include file="/inc/bottom.jsp"%>

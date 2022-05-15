@@ -3,7 +3,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ include file="/inc/top.jsp"%>
     <%@page import="java.util.ArrayList"%>
-    <%@page import="DramaModel.dramaDTO"%>
+    <%@page import="kr.siat.model.dramaDTO"%>
   
   
     <%
@@ -162,12 +162,18 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
           </section>
           <!-- End Best Seller -->
           
-          
-            <aside class="single_sidebar_widget author_widget">
-                          <a class="btn btn-primary" href="insert.drama" role="button">드라마 추가</a>
-                          <div class="br"></div>
-                      </aside>
-          
+          <%
+          if(session.getAttribute("user_email")!=null) {
+        	  if((Integer)session.getAttribute("user_type")==0) {
+        	%>
+	        	<aside class="single_sidebar_widget author_widget">
+	            	<a class="btn btn-primary" href="insert.drama" role="button">드라마 추가</a>
+	                <div class="br"></div>
+	            </aside>
+	        <%
+        	  }
+          }
+          %>
           
           
           

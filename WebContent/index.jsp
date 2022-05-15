@@ -5,3 +5,4 @@
 <h1>나일강</h1>
 
 <%@ include file="/inc/bottom.jsp" %>
+ 

@@ -40,8 +40,25 @@
     <servlet-name>drama</servlet-name>
     <url-pattern>*.drama</url-pattern>
   </servlet-mapping>
-  
-  
+
+
+	<servlet>
+		<servlet-name>cart</servlet-name>
+		<servlet-class>kr.siat.controller.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cart</servlet-name>
+		<url-pattern>*.cart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>member</servlet-name>
+		<servlet-class>kr.siat.controller.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>member</servlet-name>
+		<url-pattern>*.member</url-pattern>
+	</servlet-mapping>
   
   
   

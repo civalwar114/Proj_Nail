@@ -3,18 +3,24 @@ package kr.siat.controller;
 import java.util.HashMap;
 
 import kr.siat.menuController.Controller;
-import kr.siat.menuController.boardController;
+import kr.siat.menuController.cartController;
 import kr.siat.menuController.dramaController;
+import kr.siat.menuController.feedbackBoardController;
+import kr.siat.menuController.memberController;
 import kr.siat.menuController.movieController;
+import kr.siat.menuController.reviewBoardController;
 
 public class HandlerMapping {
 	
 	HashMap<String, Controller> mapping = new HashMap<String, Controller>();
 	{
-		mapping.put("/bbs", new boardController());   //°Ô½ÃÆÇ
-		mapping.put("/movie", new movieController());  //¿µÈ­
-		mapping.put("/drama", new dramaController()); //µå¶ó¸¶
-		//mapping.put("/movie", new movieController()); //·Î±×ÀÎ
+		// mapping.put("/bbs", new boardController());   //ï¿½Ô½ï¿½ï¿½ï¿½
+		mapping.put("/movie", new movieController());  //ï¿½ï¿½È­
+		mapping.put("/drama", new dramaController()); //ï¿½ï¿½ï¿½
+		mapping.put("/cart", new cartController()); //Ä«Æ®
+		mapping.put("/reviewboard", new reviewBoardController());
+		mapping.put("/feedbackboard", new feedbackBoardController());
+		mapping.put("/member", new memberController());
 	}
 	
 	public Controller getController(String menu) {

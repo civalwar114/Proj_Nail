@@ -24,8 +24,9 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath }/inc/vendors/owl-carousel/owl.carousel.min.css">
 
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath }/inc/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/inc/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/subscribe.css">
+
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
@@ -46,63 +47,47 @@
 						id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
 							<li class="nav-item active"><a class="nav-link"
-								href="index.jsp">Home</a></li>
+                        href="index.jsp">Home</a></li>
+                     <li class="nav-item submenu dropdown"><a href="#"
+                        class="nav-link dropdown-toggle" data-toggle="dropdown"
+                        role="button" aria-haspopup="true" aria-expanded="false" >영화</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link"
+                              href="<%=request.getContextPath()%>/movie/category.movie">영화 목록</a></li>
+                     
+                    
+                           <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/movie/cart.cart">Shopping Cart</a></li>
+                        </ul>
+                     </li>
+                     
+                        <li class="nav-item submenu dropdown"><a href="#"
+                        class="nav-link dropdown-toggle" data-toggle="dropdown"
+                        role="button" aria-haspopup="true" aria-expanded="false">드라마</a>
+                        <ul class="dropdown-menu">
+                           <li class="nav-item"><a class="nav-link"
+                              href="<%=request.getContextPath()%>/drama/category.drama">드라마 목록</a></li>
+                          
+                           <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/drama/cart.cart">Shopping Cart</a></li>
+                        </ul>
+                     </li>
+                     
+                     
 							<li class="nav-item submenu dropdown"><a href="#"
 								class="nav-link dropdown-toggle" data-toggle="dropdown"
-								role="button" aria-haspopup="true" aria-expanded="false">영화</a>
+								role="button" aria-haspopup="true" aria-expanded="false">게시판</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link"
-										href="<%=request.getContextPath()%>/movie/category.movie">영화 목록</a></li>
+										href="<%=request.getContextPath()%>/reviewboard/list.board">리뷰게시판</a></li>
 									<li class="nav-item"><a class="nav-link"
-										href="<%=request.getContextPath()%>/movie/detail.movie">영화 상세보기</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="checkout.html">Product Checkout</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="confirmation.html">Confirmation</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-								</ul>
-							</li>
-							
-								<li class="nav-item submenu dropdown"><a href="#"
-								class="nav-link dropdown-toggle" data-toggle="dropdown"
-								role="button" aria-haspopup="true" aria-expanded="false">드라마</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link"
-										href="<%=request.getContextPath()%>/drama/category.drama">드라마 목록</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="<%=request.getContextPath()%>/drama/detail.drama">드라마 상세보기</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="checkout.html">Product Checkout</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="confirmation.html">Confirmation</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-								</ul>
-							</li>
-							
-							
-							
-							
-							
-							<li class="nav-item submenu dropdown"><a href="#"
-								class="nav-link dropdown-toggle" data-toggle="dropdown"
-								role="button" aria-haspopup="true" aria-expanded="false">Board</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link"
-										href="<%=request.getContextPath()%>/bbs/list.board">Hot
-											issue</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="single-blog.html">자유게시판</a></li>
+										href="<%=request.getContextPath()%>/feedbackboard/list.board">문의게시판</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown"><a href="#"
 								class="nav-link dropdown-toggle" data-toggle="dropdown"
-								role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+								role="button" aria-haspopup="true" aria-expanded="false">가격 정책</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="login.html">로그인</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="register.html">회원가입</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="tracking-order.html">Tracking</a></li>
+									<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/member/login.member">구독제</a></li>
+									<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/member/register.member">다운로드</a></li>
 								</ul>
 							</li>
 							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -115,8 +100,20 @@
 							<li class="nav-item"><button>
 									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
 								</button></li>
-							<li class="nav-item"><a class="button button-header"
-								href="#">Buy Now</a></li>
+							
+							<%
+							if(session.getAttribute("user_email")==null) {
+							%>
+								<li class="nav-item"><a class="button button-header"
+								href="<%=request.getContextPath()%>/member/login.member">Login</a></li>
+							<%
+							} else {
+							%>	
+								<li class="nav-item"><a class="button button-header"
+										href="<%=request.getContextPath()%>/member/logout.member">[<%=session.getAttribute("user_name") %>]님 Logout</a></li>
+							<%
+							}
+							%>
 						</ul>
 					</div>
 				</div>
