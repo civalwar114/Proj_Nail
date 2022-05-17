@@ -17,7 +17,9 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
  
 
 <!-- ================ start banner area ================= -->	
-	<section class="blog-banner-area" id="category">
+		<p>　</p>
+		<p>　</p>
+		<p>　</p>
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
@@ -31,7 +33,7 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
 				</div>
 			</div>
     </div>
-	</section>
+	
 	<!-- ================ end banner area ================= -->
 	
 		<!-- ================ category section start ================= -->		  
@@ -110,13 +112,7 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
                 <option  ${param.sorting=="country"?"selected":""} value="country">국가</option>
               </select>
             </div>
-            <div class="sorting mr-auto">
-              <select>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-              </select>
-            </div>
+            
             <div>
               <div class="input-group filter-bar-search">
               </div>

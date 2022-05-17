@@ -21,28 +21,18 @@
 						<div class="single-footer-widget tp_widgets">
 							<h4 class="footer_title">Quick Links</h4>
 							<ul class="list">
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Product</a></li>
-								<li><a href="#">Brand</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a href="<%=request.getContextPath()%>/index.jsp">Home</a></li>
+								<li><a href="<%=request.getContextPath()%>/movie/category.movie">영화</a></li>
+								<li><a href="<%=request.getContextPath()%>/drama/category.drama">드라마</a></li>
+								<li><a href="<%=request.getContextPath()%>/reviewboard/list.board">리뷰 게시판</a></li>
+								<li><a href="<%=request.getContextPath()%>/feedbackboard/list.board">문의 게시판</a></li>
+								<li><a href="<%=request.getContextPath()%>/contact.jsp">Contact</a></li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget instafeed">
-							<h4 class="footer_title">Gallery</h4>
-							<ul class="list instafeed d-flex flex-wrap">
-								<li><img src="img/gallery/r1.jpg" alt=""></li>
-								<li><img src="img/gallery/r2.jpg" alt=""></li>
-								<li><img src="img/gallery/r3.jpg" alt=""></li>
-								<li><img src="img/gallery/r5.jpg" alt=""></li>
-								<li><img src="img/gallery/r7.jpg" alt=""></li>
-								<li><img src="img/gallery/r8.jpg" alt=""></li>
-							</ul>
-						</div>
-					</div>
+					
+					
+					
 					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
 						<div class="single-footer-widget tp_widgets">
 							<h4 class="footer_title">Contact Us</h4>

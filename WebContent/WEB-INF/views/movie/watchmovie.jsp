@@ -21,7 +21,7 @@ MovieDTO dto = new MovieDTO();
     
 
 <!-- ================ start banner area ================= -->	
-	<section class="blog-banner-area" id="category">
+
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
@@ -33,16 +33,16 @@ MovieDTO dto = new MovieDTO();
           </nav>         
           <p>test watch test movie</p>  
   
-		</div>
- <!-- 여기에 영화 상세 정보? -->
+			</div>
+
   				<div class="text-center">
   				 <h2>${movie.movieTitle}</h2>
-   			<div class="col-lg-9 col-md-9 movie_details"  > 
+   			
 						<h2><%=dto.getMovieTitle() %></h2>
 									<!-- 서브타이틀 정도로 쓰기 -->
-					</div>
+					
    
- <a class="button button-blog" >다운로드</a>
+ 		<a class="button button-blog" >다운로드</a>
    
    
    
@@ -57,7 +57,7 @@ MovieDTO dto = new MovieDTO();
     
     
  
-	</section>
+	
 	<!-- ================ end banner area ================= -->
 	
 	

@@ -37,6 +37,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<!--================ Start Header Menu Area =================-->
 	<header class="header_area">
 		<div class="main_menu">
@@ -99,9 +100,7 @@
 						</ul>
 
 						<ul class="nav-shop">
-							<li class="nav-item"><button>
-									<i class="ti-search"></i>
-								</button></li>
+							
 							<li class="nav-item"><button>
 									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
 								</button></li>

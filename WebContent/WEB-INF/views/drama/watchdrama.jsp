@@ -31,17 +31,16 @@ dramaDTO dto = new dramaDTO();
                       
             </ol>
           </nav>         
-          <p>test watch test rama</p>  
+              <p>test watch test movie</p>  
   
 		</div>
  <!-- 여기에 영화 상세 정보? -->
   				<div class="text-center">
   				 <h2>${drama.movieTitle}</h2>
-   			<div class="col-lg-9 col-md-9 drama_details"  > 
+   		
 						<h2><%=dto.getDramaTitle() %></h2>
 									<!-- 서브타이틀 정도로 쓰기 -->
-					</div>
-   
+					
  <a class="button button-blog" >다운로드</a>
    
    

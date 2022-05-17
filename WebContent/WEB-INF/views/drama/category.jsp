@@ -15,14 +15,16 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
     
 
 <!-- ================ start banner area ================= -->	
-	
+		<p>　</p>
+	<p>　</p>
+	<p>　</p>
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
 					<p>　</p>
 					<h1>Drama Category</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
+           		 <ol class="breadcrumb">
               
               <li class="breadcrumb-item active" aria-current="page">드라마목록</li>
             </ol>
@@ -49,8 +51,7 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="sports" name="brand"><label for="sports">스포츠<span></span></label></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="comedey" name="brand"><label for="comedey">코미디<span></span></label></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="horror" name="brand"><label for="horror">공포<span></span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="SF" name="brand"><label for="SF">SF<span></span></label></li>
-                  
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="SF" name="brand"><label for="SF">SF<span></span></label></li>                  
                   </ul>
                 </form>
               </li>
@@ -110,13 +111,7 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
                 <option value="1">Default sorting</option>
               </select>
             </div>
-            <div class="sorting mr-auto">
-              <select>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-              </select>
-            </div>
+
             <div>            
               <div class="input-group filter-bar-search">
               </div>
