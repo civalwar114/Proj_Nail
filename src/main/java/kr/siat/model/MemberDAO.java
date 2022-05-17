@@ -40,7 +40,7 @@ public class MemberDAO {
 	}
 	
 	public void register(MemberDTO dto) {
-		System.out.printf("DAO�뿉�꽌�쓽 dto媛믩뱾 : %s, %s, %s, %s, %d\n", dto.getUserName(), dto.getUserEmail(), dto.getUserPhone(), dto.getUserPassword(), dto.getUserType());
+		System.out.printf("DAO에서의 dto값들 : %s, %s, %s, %s, %d\n", dto.getUserName(), dto.getUserEmail(), dto.getUserPhone(), dto.getUserPassword(), dto.getUserType());
 		conn = JdbcUtil.getConnection();
 		try {
 			ptmt = conn.prepareStatement(SQL_REGISTER);
@@ -78,7 +78,7 @@ public class MemberDAO {
 				String phone = rs.getString("userphone");
 				String password = rs.getString("userpassword");
 				String regidate = rs.getString("userregidate");
-				int type = rs.getInt("useradminwhether");
+				int type = rs.getInt("usertype");
 				
 				list.add(new MemberDTO(num, name, email, password, phone, regidate, type));
 			}

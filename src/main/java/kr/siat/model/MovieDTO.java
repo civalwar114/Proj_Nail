@@ -69,8 +69,7 @@ public class MovieDTO {
 
 
 
-
-   public int getMovieAge() {
+public int getMovieAge() {
       return movieAge;
    }
 

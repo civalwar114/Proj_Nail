@@ -8,6 +8,7 @@ import kr.siat.menuController.dramaController;
 import kr.siat.menuController.feedbackBoardController;
 import kr.siat.menuController.memberController;
 import kr.siat.menuController.movieController;
+import kr.siat.menuController.priceInfoController;
 import kr.siat.menuController.reviewBoardController;
 
 public class HandlerMapping {
@@ -21,6 +22,7 @@ public class HandlerMapping {
 		mapping.put("/reviewboard", new reviewBoardController());
 		mapping.put("/feedbackboard", new feedbackBoardController());
 		mapping.put("/member", new memberController());
+		mapping.put("/priceInfo", new priceInfoController());
 	}
 	
 	public Controller getController(String menu) {

@@ -18,6 +18,8 @@ public class dramaDAO {
 	final String SQL_UPDATE = "update dramatable set dramatitle=?, dramacontent=?, dramagenre=?, dramadirector=?, dramayear=? ,dramacountry=?, dramacompany=?, dramaprice=?, dramahide=?, dramaage=? WHERE dramanum=?";
 	final String SQL_DELETE = "delete dramatable where dramanum=?";
 	//final String SQL_UPDATE_VIEWCOUNT = "update movietable set boardviewcnt=? where boardnum=?";
+	final String SQL_SEARCH_TITLE = "SELECT * FROM dramatable WHERE dramatitle LIKE '%'||?||'%' ";
+	
 	
 	private Connection conn;
 	private Statement stmt;
@@ -164,6 +166,41 @@ public class dramaDAO {
 		
 		JdbcUtil.close(conn, ptmt);
 	}
-
+	 
+	public ArrayList<dramaDTO> search(String searchtext) {
+			ArrayList<dramaDTO> list = new ArrayList<dramaDTO>();
+			conn = JdbcUtil.getConnection();
+			try {
+				ptmt = conn.prepareStatement(SQL_SEARCH_TITLE);			
+				ptmt.setString(1,searchtext);
+			
+				rs = ptmt.executeQuery();
+				
+				while(rs.next()) {
+					int dramaNum = rs.getInt("dramanum");
+					String dramaGenre = rs.getString("dramagenre");
+					String dramaTitle = rs.getString("dramatitle");
+					String dramaContent = rs.getString("dramacontent");
+					String dramaDirector = rs.getString("dramadirector");				
+					String dramaYear = rs.getString("dramayear");
+					int dramaPrice = rs.getInt("dramaprice");
+					String dramaCountry = rs.getString("dramacountry");	
+					String dramaCompany = rs.getString("dramacompany");	
+					int dramaLikeCnt = rs.getInt("dramalikecnt");
+					int dramaHide = rs.getInt("dramahide");
+					int dramaAge = rs.getInt("dramaage");
+					
+					list.add(new dramaDTO(dramaNum, dramaGenre, dramaTitle, dramaContent, dramaDirector, dramaYear,dramaPrice, dramaCountry,
+							dramaCompany, dramaLikeCnt, dramaHide,dramaAge));
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			JdbcUtil.close(conn, ptmt, rs);
+			
+			return list;
+		}
 
 }

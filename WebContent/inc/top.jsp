@@ -26,7 +26,15 @@
 
 <link rel="stylesheet" href="${pageContext.request.contextPath }/inc/css/style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/subscribe.css">
+<style>
+      body { padding: 0px; margin: 0px; }
+      .jb-box { width: 100%; height: 600px; overflow: hidden;margin: 0px auto; position: relative; }
+      iframe { width: 80%; }
+      .jb-text { position: absolute; top: 50%; width: 100%; }
+      .jb-text p { margin-top: -24px; text-align: center; font-size: 48px; color: #ffffff; }
+</style>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
@@ -47,15 +55,13 @@
 						id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto mr-auto">
 							<li class="nav-item active"><a class="nav-link"
-                        href="index.jsp">Home</a></li>
+                        href="<%=request.getContextPath()%>/index.jsp">Home</a></li>
                      <li class="nav-item submenu dropdown"><a href="#"
                         class="nav-link dropdown-toggle" data-toggle="dropdown"
                         role="button" aria-haspopup="true" aria-expanded="false" >영화</a>
                         <ul class="dropdown-menu">
                            <li class="nav-item"><a class="nav-link"
-                              href="<%=request.getContextPath()%>/movie/category.movie">영화 목록</a></li>
-                     
-                    
+                              href="<%=request.getContextPath()%>/movie/category.movie">영화 목록</a></li>                                        
                            <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/movie/cart.cart">Shopping Cart</a></li>
                         </ul>
                      </li>
@@ -70,8 +76,7 @@
                            <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/drama/cart.cart">Shopping Cart</a></li>
                         </ul>
                      </li>
-                     
-                     
+                                          
 							<li class="nav-item submenu dropdown"><a href="#"
 								class="nav-link dropdown-toggle" data-toggle="dropdown"
 								role="button" aria-haspopup="true" aria-expanded="false">게시판</a>
@@ -90,7 +95,7 @@
 									<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/member/register.member">다운로드</a></li>
 								</ul>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/contact.jsp">Contact</a></li>
 						</ul>
 
 						<ul class="nav-shop">

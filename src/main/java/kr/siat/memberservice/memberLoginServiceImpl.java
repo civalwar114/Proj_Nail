@@ -2,6 +2,7 @@ package kr.siat.memberservice;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,16 @@ public class memberLoginServiceImpl implements Controller {
 		if(req.getMethod().equals("GET")) {
 			return new ModelAndView("member/login", false);
 		} else if(req.getMethod().equals("POST")) {
+			
+			try {
+				req.setCharacterEncoding("UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			resp.setCharacterEncoding("UTF-8");
+			resp.setContentType("text/html; charset=UTF-8");
+			
 			System.out.println("memberLoginServiceImpl POST 방식 진입 확인");
 			HttpSession session = req.getSession();
 			

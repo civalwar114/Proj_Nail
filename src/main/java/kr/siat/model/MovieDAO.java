@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+
+
 import kr.siat.dbcp.JdbcUtil;
 
 
@@ -19,8 +21,9 @@ public class MovieDAO {
 	final String SQL_UPDATE = "update movietable set movietitle=?, moviecontent=?, moviegenre=?, moviedirector=?, movieyear=? ,moviecountry=?, moviecompany=?, movieprice=?, moviehide=?, movieage=? WHERE movienum=?";
 	final String SQL_DELETE = "delete movietable where movienum=?";
 	//final String SQL_UPDATE_VIEWCOUNT = "update movietable set boardviewcnt=? where boardnum=?";
-	//
-	//
+	final String SQL_SEARCH_TITLE = "SELECT * FROM movietable WHERE movietitle LIKE '%'||?||'%' ";
+	//or AUTHOR LIKE '%'||?||'%' or CONTENT LIKE '%'||?||'%' ;
+	//final String SQL_FIND = "SELECT movietitle FROM movietable WHERE movietitle=?";
 	  
 	
 	
@@ -177,6 +180,48 @@ public void update(String modifyTitle, String modifyContent, String modifyGenre,
 		
 		JdbcUtil.close(conn, ptmt);
 	}
+	
+
 
 	
+	 public ArrayList<MovieDTO> search(String searchtext) {
+		ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
+		conn = JdbcUtil.getConnection();
+		try {
+			ptmt = conn.prepareStatement(SQL_SEARCH_TITLE);			
+			ptmt.setString(1,searchtext);
+		
+			rs = ptmt.executeQuery();
+			
+			while(rs.next()) {
+	            int movieNum = rs.getInt("movienum");
+	            String movieGenre = rs.getString("moviegenre");
+	            String movieTitle = rs.getString("movietitle");
+	            String movieContent = rs.getString("moviecontent");
+	            String movieDirector = rs.getString("moviedirector");            
+	            String movieYear = rs.getString("movieyear");
+	            int moviePrice = rs.getInt("movieprice");
+	            String movieCountry = rs.getString("moviecountry");   
+	            String movieCompany = rs.getString("moviecompany");   
+	            int movieLikeCnt = rs.getInt("movielikecnt");
+	            int movieHide = rs.getInt("moviehide");
+	            int movieAge = rs.getInt("movieage");
+	            
+	            list.add(new MovieDTO(movieNum, movieGenre, movieTitle, movieContent, movieDirector, movieYear,moviePrice, movieCountry,
+	                  movieCompany, movieLikeCnt, movieHide,movieAge));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		JdbcUtil.close(conn, ptmt, rs);
+		
+		return list;
+	}
+
+
+		
+	
+
 }

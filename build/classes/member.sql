@@ -6,19 +6,10 @@ create table member (
 	userPhone varchar2(30) not null,
 	userPassword varchar2(70) not null,
 	userRegidate date default sysdate not null,
-	userAdminWhether number not null
+	usertype number not null
 );
 
 drop sequence member_seq;
 create sequence member_seq;
 
-
-insert into member (
-	member_seq.nextval,
-	'°ü¸®ÀÚ',
-	'test1@test.com',
-	'010-1234-5678',
-	'nail1234!',
-	sysdate,
-	0
-);
+commit

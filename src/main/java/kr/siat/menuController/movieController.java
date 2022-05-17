@@ -10,6 +10,7 @@ import kr.siat.movieservice.movieDetailServiceImpl;
 import kr.siat.movieservice.movieInsertServiceImpl;
 import kr.siat.movieservice.movieListServiceImpl;
 import kr.siat.movieservice.movieModifyServiceImpl;
+import kr.siat.movieservice.movieSearchServiceImpl;
 import kr.siat.movieservice.movieWatchServiceImpl;
 
 public class movieController implements Controller {
@@ -28,6 +29,8 @@ public class movieController implements Controller {
 			return new movieWatchServiceImpl().request(req, resp);
 		}else if(req.getAttribute("service").equals("/insert")) {
 			return new movieInsertServiceImpl().request(req, resp);
+		}else if(req.getAttribute("service").equals("/search")) {
+			return new movieSearchServiceImpl().request(req, resp);
 		}
 		
 		

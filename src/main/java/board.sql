@@ -1,15 +1,15 @@
 drop table movieboard;
 
 create table movieboard (
-	boardNum number primary key,
-	boardAuthor VARCHAR2(20) not null,
-	boardTitle VARCHAR2(40) not null,
-	boardContent VARCHAR2(3000) not null,
-	boardPassword VARCHAR2(20) not null,
-	boardRegidate date default sysdate,
-	boardViewCnt number default 0 not null,
-	boardLikeCnt number not null,
-	boardRepRoot  NUMBER(4),
+   boardNum number primary key,
+   boardAuthor VARCHAR2(20) not null,
+   boardTitle VARCHAR2(40) not null,
+   boardContent VARCHAR2(3000) not null,
+   boardPassword VARCHAR2(20) not null,
+   boardRegidate date default sysdate,
+   boardViewCnt number default 0 not null,
+   boardLikeCnt number not null,
+   boardRepRoot  NUMBER(4),
     boardRepStep  NUMBER(4),
     boardRepIndent NUMBER(4)
 );
@@ -18,48 +18,50 @@ drop sequence movieboard_seq;
 create sequence movieboard_seq;
 
 insert into movieboard values (
-	movieboard_seq.nextval, 'takgeun', 'ë”ë¯¸ë°ì´í„°1', 'ë”ë¯¸ë°ì´í„°1ë”ë¯¸ë°ì´í„°1ë”ë¯¸ë°ì´í„°1ë”ë¯¸ë°ì´í„°1', '1234', sysdate, 0, 0, 0, 0, 0
+   movieboard_seq.nextval, 'takgeun', '´õ¹Ìµ¥ÀÌÅÍ1', '´õ¹Ìµ¥ÀÌÅÍ1´õ¹Ìµ¥ÀÌÅÍ1´õ¹Ìµ¥ÀÌÅÍ1´õ¹Ìµ¥ÀÌÅÍ1', '1234', sysdate, 0, 0, 0, 0, 0
 );
-	
+   
 insert into movieboard values (
-	movieboard_seq.nextval, 'takgeun2', 'ë”ë¯¸ë°ì´í„°2', 'ë”ë¯¸ë°ì´í„°2ë”ë¯¸ë°ì´í„°2ë”ë¯¸ë°ì´í„°2ë”ë¯¸ë°ì´í„°2', '1234', sysdate, 0, 0, 0, 0, 0
-);
-
-insert into movieboard values (
-	movieboard_seq.nextval, 'takgeun3', 'ë”ë¯¸ë°ì´í„°3', 'ë”ë¯¸ë°ì´í„°3ë”ë¯¸ë°ì´í„°3ë”ë¯¸ë°ì´í„°3ë”ë¯¸ë°ì´í„°3', '1234', sysdate, 0, 0, 0, 0, 0
+   movieboard_seq.nextval, 'takgeun2', '´õ¹Ìµ¥ÀÌÅÍ2', '´õ¹Ìµ¥ÀÌÅÍ2´õ¹Ìµ¥ÀÌÅÍ2´õ¹Ìµ¥ÀÌÅÍ2´õ¹Ìµ¥ÀÌÅÍ2', '1234', sysdate, 0, 0, 0, 0, 0
 );
 
 insert into movieboard values (
-	movieboard_seq.nextval, 'takgeun4', 'ë”ë¯¸ë°ì´í„°4', 'ë”ë¯¸ë°ì´í„°4ë”ë¯¸ë°ì´í„°4ë”ë¯¸ë°ì´í„°4ë”ë¯¸ë°ì´í„°4', '1234', sysdate, 0, 0, 0, 0, 0
+   movieboard_seq.nextval, 'takgeun3', '´õ¹Ìµ¥ÀÌÅÍ3', '´õ¹Ìµ¥ÀÌÅÍ3´õ¹Ìµ¥ÀÌÅÍ3´õ¹Ìµ¥ÀÌÅÍ3´õ¹Ìµ¥ÀÌÅÍ3', '1234', sysdate, 0, 0, 0, 0, 0
 );
 
+insert into movieboard values (
+   movieboard_seq.nextval, 'takgeun4', '´õ¹Ìµ¥ÀÌÅÍ4', '´õ¹Ìµ¥ÀÌÅÍ4´õ¹Ìµ¥ÀÌÅÍ4´õ¹Ìµ¥ÀÌÅÍ4´õ¹Ìµ¥ÀÌÅÍ4', '1234', sysdate, 0, 0, 0, 0, 0
+);
 
+drop table feedbackboard;
 create table feedbackboard (
-	num number primary key,
-	author VARCHAR2(20) not null,
-	title VARCHAR2(40) not null,
-	content VARCHAR2(3000) not null,
-	password VARCHAR2(20) not null,
-	regidate date default sysdate,
-	viewcnt number default 0 not null,
-	repauthor VARCHAR2(20) not null,
-	repcontent VARCHAR2(3000)
+   num number primary key,
+   author VARCHAR2(50) not null,
+   title VARCHAR2(100) not null,
+   content VARCHAR2(3000) not null,
+   regidate date default sysdate,
+   viewcnt number default 0 not null,
+   answercheck number default 1 not null
 );
 
-create sequence feedback_seq;
+drop sequence feedback_seq;
+create sequence feedback_seq
+   MINVALUE 1
+   MAXVALUE 3
+   CYCLE
+   CACHE 2;
+   
 
 insert into feedbackboard values (
-	feedback_seq.nextval, 'takgeun1', 'ë”ë¯¸ë°ì´í„°ì œëª©1', 'ë”ë¯¸ë°ì´í„°ë‚´ìš©1', '1234', sysdate, 0, 'ìƒë‹´ì›ì›', 'ë”ë¯¸ë°ì´í„° ë‹µë³€1'
+   feedback_seq.nextval, 'takgeun1', '´õ¹Ìµ¥ÀÌÅÍÁ¦¸ñ1', '´õ¹Ìµ¥ÀÌÅÍ³»¿ë1', sysdate, 0, 1
 );
 
 insert into feedbackboard values (
-	feedback_seq.nextval, 'takgeun2', 'ë”ë¯¸ë°ì´í„°ì œëª©2', 'ë”ë¯¸ë°ì´í„°ë‚´ìš©2', '1234', sysdate, 0, 'ìƒë‹´ì›íˆ¬', 'ë”ë¯¸ë°ì´í„° ë‹µë³€2'
+   feedback_seq.nextval, 'takgeun2', '´õ¹Ìµ¥ÀÌÅÍÁ¦¸ñ2', '´õ¹Ìµ¥ÀÌÅÍ³»¿ë2', sysdate, 0, 1
 );
 
+insert into feedbackboard values (
+   feedback_seq.nextval, 'takgeun3', '´õ¹Ìµ¥ÀÌÅÍÁ¦¸ñ3', '´õ¹Ìµ¥ÀÌÅÍ³»¿ë3', sysdate, 0, 1
+);
 
-create table comments(
-	num number primary key,
-	id varchar2(20) not null,
-	
-)
-
+commit

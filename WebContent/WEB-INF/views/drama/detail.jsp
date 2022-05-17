@@ -17,48 +17,31 @@ dramaDTO dto = new dramaDTO();
     	}
        
 %>
-    
-    
-
 <!-- ================ start banner area ================= -->	
-	<section class="blog-banner-area" id="category">
+
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Drama Detail</h1>
+					<h1>드라마 정보</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="category.drama">목록 보기</a></li>             
             </ol>
-          </nav>         
-   
-  
+          </nav>          
 		</div>
- <!-- 여기에 영화 상세 정보? -->
   				<div class="text-center">
-  				 <h2>${drama.dramaTitle}</h2>
-   			<div class="col-lg-9 col-md-9 drama_details"  > 
+  				<img src="<%=request.getContextPath()%>/inc/img/product/movieNum2.jpg" class="center" >
+  				 <h2>${drama.dramaTitle}</h2>   			
 						<h2><%=dto.getDramaTitle() %></h2>
-						<p class="excert"><%=dto.getDramaGenre() %>               <%=dto.getDramaYear() %></p>
-						<p class="excert"><%=dto.getDramaDirector() %></p>
-						<p class="excert"><%=dto.getDramaAge() %>세 관람가</p>
-						<p class="excert"><%=dto.getDramaContent() %></p>					<!-- 서브타이틀 정도로 쓰기 -->
-					</div>
-   
-  </div>
-   
-   
-   
-			</div>   
-			
-    </div>
-     
-    
-    
- 
-	</section>
-	<!-- ================ end banner area ================= -->
-	
+						<p class="excert">장르 : <%=dto.getDramaGenre() %>  / <%=dto.getDramaAge() %>세 관람가</p>
+						<p class="excert"> 개봉 :<%=dto.getDramaYear() %> / 감독:<%=dto.getDramaDirector() %></p>
+						<p class="excert">배급:<%=dto.getDramaCompany() %> / 국가:<%=dto.getDramaCountry() %></p>
+						<p>줄거리</p>
+						<p class="excert"><%=dto.getDramaContent() %></p>				
+ 		 			</div>
+				</div>   			
+   			 </div>
+ 	<!-- ================ end banner area ================= -->	
 		    <%
           if(session.getAttribute("user_email")!=null) {
         	  if((Integer)session.getAttribute("user_type")==0) {
@@ -66,14 +49,7 @@ dramaDTO dto = new dramaDTO();
             <aside class="single_sidebar_widget author_widget">
                           <a class="btn btn-primary" href="dramamodify.drama?num=<%=dto.getDramaNum() %>" role="button">수정</a>
                           <div class="br"></div>
-                      </aside>         
-                      
-                           
+            </aside>                                   
                   <%       	  }          }          %>
-	
-	
-	
-	
-	
-	
+                  	
 <%@ include file="/inc/bottom.jsp"%>

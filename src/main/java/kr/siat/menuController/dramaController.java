@@ -13,6 +13,7 @@ import kr.siat.dramaservice.dramaDetailServiceImpl;
 import kr.siat.dramaservice.dramaInsertServiceImpl;
 import kr.siat.dramaservice.dramaListServiceImpl;
 import kr.siat.dramaservice.dramaModifyServiceImpl;
+import kr.siat.dramaservice.dramaSearchServiceImpl;
 import kr.siat.dramaservice.dramaWatchServiceImpl;
 
 public class dramaController implements Controller {
@@ -34,6 +35,9 @@ public class dramaController implements Controller {
 		
 		else if(req.getAttribute("service").equals("/insert"))
 			return new dramaInsertServiceImpl().request(req, resp);
+		
+		else if(req.getAttribute("service").equals("/search"))
+			return new dramaSearchServiceImpl().request(req, resp);
 		
 		return null;
 	}

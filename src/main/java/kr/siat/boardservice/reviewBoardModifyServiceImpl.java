@@ -49,7 +49,7 @@ public class reviewBoardModifyServiceImpl implements Service {
 		System.out.println("modifyService Post modifyNum : " + modifyNum);
 		boardDAO.update(modifyTitle, modifyContent, Integer.parseInt(modifyNum));
 			
-		// �뾽�뜲�씠�듃 �씠�썑 dto ���옣
+		// 업데이트 이후 dto 저장
 		BoardDTO dto = boardDAO.selectbyBoardNum(modifyNum);
 		req.setAttribute("boardaftermodify", dto);
 		
@@ -82,11 +82,11 @@ public class reviewBoardModifyServiceImpl implements Service {
 				/*
 				 * resp.setContentType("text/html; charset=utf-8"); PrintWriter out; try { out =
 				 * resp.getWriter(); out.println("<script>");
-				 * out.println("alert('�닔�젙�씠 �셿猷뚮릺�뿀�뒿�땲�떎.');"); // out.println("history.back();");
+				 * out.println("alert('수정이 완료되었습니다.');"); // out.println("history.back();");
 				 * out.println("</script>"); out.flush(); } catch (IOException e) { // TODO
 				 * Auto-generated catch block e.printStackTrace(); }
 				 */
-				req.setAttribute("msg", "�닔�젙�씠 �셿猷뚮릺�뿀�뒿�땲�떎.");
+				req.setAttribute("msg", "수정이 완료되었습니다.");
 				
 				return new ModelAndView("reviewboard/passCheck", false);
 			} else {
@@ -95,7 +95,7 @@ public class reviewBoardModifyServiceImpl implements Service {
 				try {
 					out = resp.getWriter();
 					out.println("<script>");
-			   		out.println("alert('鍮꾨�踰덊샇媛� �씪移섑븯吏� �븡�뒿�땲�떎.');");
+			   		out.println("alert('비밀번호가 일치하지 않습니다.');");
 			   		out.println("history.back();");
 			   		out.println("</script>");
 			   		out.close();
@@ -104,7 +104,7 @@ public class reviewBoardModifyServiceImpl implements Service {
 					e.printStackTrace();
 				}
 				
-				// req.setAttribute("message", "鍮꾨�踰덊샇媛� ���졇�뒿�땲�떎.");
+				// req.setAttribute("message", "비밀번호가 틀렸습니다.");
 				/*
 				 * BoardDTO dto = boardDAO.selectbyBoardNum(modifyNum);
 				 * req.setAttribute("boardaftermodify", dto); return new
