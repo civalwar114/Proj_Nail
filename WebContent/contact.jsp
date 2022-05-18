@@ -16,7 +16,6 @@
    				</div>
  
  
- 
   			    <div class="text-center">
   				
 				<p>　</p>

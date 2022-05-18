@@ -5,15 +5,13 @@
     <%@page import="java.util.ArrayList"%>
     <%@page import="kr.siat.model.MovieDTO"%>
   
-  
     <%
-ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
-list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
-%>    
+		ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
+		list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
+	%>    
     <c:if test="${empty searchList }">
 		<h2>검색 결과 데이터가 존재하지 않습니다.</h2>
 	</c:if>
-<!-- ================ start banner area ================= -->	
 		<p>　</p>
 		<p>　</p>
 		<p>　</p>
@@ -119,8 +117,7 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
           </div>
          
           <section class="lattest-product-area pb-40 category-list">
-            <div class="row">
-                    
+            <div class="row">                   
             <c:forEach var="movie" items="${searchList}">
               <div class="col-md-6 col-lg-4">
                 <div class="card text-center card-product">

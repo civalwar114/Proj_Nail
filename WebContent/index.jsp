@@ -6,15 +6,12 @@
 	<p>　</p>
 	<h1> 인기 영화 </h1>
 	<p>　</p>
-	<div class="jb-box">
-      
+	<div class="jb-box">      
   	<iframe width="100%" height="100%" src="https://www.youtube.com/embed/XUhRA_ObaDo" 
 		title="YouTube video player" frameborder="0" 
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 	</iframe>
-     
-      <div class="jb-text">
-      
+      <div class="jb-text">     
       </div>
     </div>
 	<p>　</p>
@@ -53,13 +50,7 @@
 </div>
 	<p>　</p>
 	<p>　</p>
-	<p>　</p>
-	
+	<p>　</p>	
 	<h1> 임시 임시 임시 </h1>
-
-
 </div>
-
-
-
 <%@ include file="/inc/bottom.jsp" %>

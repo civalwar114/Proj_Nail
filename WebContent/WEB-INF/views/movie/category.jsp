@@ -11,11 +11,8 @@ ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
 list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
 %>
     
-    
-    
 
-<!-- ================ start banner area ================= -->	
-		<p>　</p>
+	<p>　</p>
 	<p>　</p>
 	<p>　</p>
 		<div class="container h-100">
@@ -29,12 +26,9 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
               <li class="breadcrumb-item active" aria-current="page">영화목록</li>
             </ol>
           </nav>
-				</div>
-			</div>
+		</div>
+	  </div>
     </div>
-	
-	<!-- ================ end banner area ================= -->
-	
 		<!-- ================ category section start ================= -->		  
   <section class="section-margin--small mb-5">
     <div class="container">
@@ -51,8 +45,7 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="sports" name="brand"><label for="sports">스포츠<span></span></label></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="comedey" name="brand"><label for="comedey">코미디<span></span></label></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="horror" name="brand"><label for="horror">공포<span></span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="SF" name="brand"><label for="SF">SF<span></span></label></li>
-                  
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="SF" name="brand"><label for="SF">SF<span></span></label></li>                  
                   </ul>
                 </form>
               </li>
@@ -113,34 +106,23 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
             </div>
             <div>
               <div class="input-group filter-bar-search">
-              </div>
-               
+              </div> 
                 <form class="form-inline my-2 my-lg-0" action="search.movie" method="POST">
-      				<input class="form-control mr-sm-2" type="text" name="searchtext" placeholder="Search">
+      				 <input class="form-control mr-sm-2" type="text" name="searchtext" placeholder="Search">
      				 <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
   				</form>
-              
             </div>
           </div>
           <!-- End Filter Bar -->
-          <!-- Start Best Seller -->
-          
-          
           <section class="lattest-product-area pb-40 category-list">
             <div class="row">
-            
-            
-            
-            
             <c:forEach var="movie" items="${movieList}">
               <div class="col-md-6 col-lg-4">
                 <div class="card text-center card-product">
                 <!-- 이미지 오버레이  -->
                   <div class="card-product__img">
-              
                     <img class="card-img" src=  "<%=request.getContextPath()%>/inc/img/product/movieNum1.jpg">
                     <ul class="card-product__imgOverlay">
-                     
                       <li><button><i class="ti-shopping-cart"></i></button></li>
                       <li><button><i class="ti-heart"></i></button></li>
                     </ul>
