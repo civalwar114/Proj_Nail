@@ -7,18 +7,15 @@
     <%@page import="kr.siat.model.dramaDTO"%>
     
        <%
-dramaDTO dto = new dramaDTO();
-       if("GET".equals(request.getMethod())) {
+			dramaDTO dto = new dramaDTO();
+       		if("GET".equals(request.getMethod())) {
     		dto = (dramaDTO) request.getAttribute("dramadetail");
-
     		session.setAttribute("DramaSessionNum", dto.getDramaNum());
-    	} else if("POST".equals(request.getMethod())) {
+    		} else if("POST".equals(request.getMethod())) {
     		dto = (dramaDTO) request.getAttribute("dramaaftermodify");
-    	}
+    		}
        
-%>
-<!-- ================ start banner area ================= -->	
-
+		%>
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
@@ -36,20 +33,20 @@ dramaDTO dto = new dramaDTO();
 						<p class="excert">장르 : <%=dto.getDramaGenre() %>  / <%=dto.getDramaAge() %>세 관람가</p>
 						<p class="excert"> 개봉 :<%=dto.getDramaYear() %> / 감독:<%=dto.getDramaDirector() %></p>
 						<p class="excert">배급:<%=dto.getDramaCompany() %> / 국가:<%=dto.getDramaCountry() %></p>
+						<p>　</p>
 						<p>줄거리</p>
 						<p class="excert"><%=dto.getDramaContent() %></p>				
  		 			</div>
 				</div>   			
    			 </div>
- 	<!-- ================ end banner area ================= -->	
 		    <%
-          if(session.getAttribute("user_email")!=null) {
+              if(session.getAttribute("user_email")!=null) {
         	  if((Integer)session.getAttribute("user_type")==0) {
         	%>          
-            <aside class="single_sidebar_widget author_widget">
-                          <a class="btn btn-primary" href="dramamodify.drama?num=<%=dto.getDramaNum() %>" role="button">수정</a>
-                          <div class="br"></div>
-            </aside>                                   
+            	<aside class="single_sidebar_widget author_widget">
+               	<a class="btn btn-primary" href="dramamodify.drama?num=<%=dto.getDramaNum() %>" role="button">수정</a>
+			 	<div class="br"></div>
+            	</aside>                                   
                   <%       	  }          }          %>
                   	
 <%@ include file="/inc/bottom.jsp"%>

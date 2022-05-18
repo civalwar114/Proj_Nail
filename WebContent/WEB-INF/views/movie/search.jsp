@@ -9,13 +9,10 @@
     <%
 ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
 list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
-%>
-    
+%>    
     <c:if test="${empty searchList }">
-	<h2>검색 결과 데이터가 존재하지 않습니다.</h2>
+		<h2>검색 결과 데이터가 존재하지 않습니다.</h2>
 	</c:if>
- 
-
 <!-- ================ start banner area ================= -->	
 		<p>　</p>
 		<p>　</p>
@@ -33,10 +30,7 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
 				</div>
 			</div>
     </div>
-	
-	<!-- ================ end banner area ================= -->
-	
-		<!-- ================ category section start ================= -->		  
+	  
   <section class="section-margin--small mb-5">
     <div class="container">
       <div class="row">
@@ -52,8 +46,7 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="sports" name="brand"><label for="sports">스포츠<span></span></label></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="comedey" name="brand"><label for="comedey">코미디<span></span></label></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="horror" name="brand"><label for="horror">공포<span></span></label></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="SF" name="brand"><label for="SF">SF<span></span></label></li>
-                  
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="SF" name="brand"><label for="SF">SF<span></span></label></li>                  
                   </ul>
                 </form>
               </li>
@@ -124,14 +117,10 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
               
             </div>
           </div>
-          <!-- End Filter Bar -->
-          <!-- Start Best Seller -->
-          
-          
+         
           <section class="lattest-product-area pb-40 category-list">
             <div class="row">
-         
-           
+                    
             <c:forEach var="movie" items="${searchList}">
               <div class="col-md-6 col-lg-4">
                 <div class="card text-center card-product">
@@ -150,50 +139,32 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
                    	
 					<a href="detail.movie?num=${movie.movieNum}">${movie.movieTitle}</a>
                     <p>${movie.moviePrice}원</p>
-       
-       
-                       
-            <a class="button button-blog" href="watchmovie.movie?num=${movie.movieNum}">바로보기</a> 
-                  
-         
-                  
-                                                                       
+             		<a class="button button-blog" href="watchmovie.movie?num=${movie.movieNum}">바로보기</a> 
+                                                                      
                   </div>           
                 </div>
               </div>
-            </c:forEach> 
-          
-            
+           	 </c:forEach> 
             </div>
-            
-        
-            
-          </section>
-          <!-- End Best Seller -->
+           </section>
+
                        
-                   <%
-          if(session.getAttribute("user_email")!=null) {
+            <%
+              if(session.getAttribute("user_email")!=null) {
         	  if((Integer)session.getAttribute("user_type")==0) {
         	%>
           
-            <aside class="single_sidebar_widget author_widget">
-                          <a class="btn btn-primary" href="insert.movie" role="button">영화 추가</a>
-                          <div class="br"></div>
-                      </aside>
-          
-          
-                  <%
-        	  }
-          }
-          %>
-          
-          
-          
-        </div>
+            		<aside class="single_sidebar_widget author_widget">
+                    <a class="btn btn-primary" href="insert.movie" role="button">영화 추가</a>
+                    <div class="br"></div>
+                    </aside>
+           <%
+        	 		 }
+         			 }
+         	 %>
+         </div>
       </div>
     </div>
   </section>
-	<!-- ================ category section end ================= -->		  
-	
-	  
+ 
 <%@ include file="/inc/bottom.jsp"%>

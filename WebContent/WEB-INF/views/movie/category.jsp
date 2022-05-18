@@ -111,7 +111,6 @@ list = (ArrayList<MovieDTO>) request.getAttribute("movieList");
                 <option  ${(param.sorting=="country")?"selected":""} value="country">국가</option>
               </select>
             </div>
-
             <div>
               <div class="input-group filter-bar-search">
               </div>

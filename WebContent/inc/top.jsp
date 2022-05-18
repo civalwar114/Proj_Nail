@@ -29,11 +29,10 @@
 <style>
       body { padding: 0px; margin: 0px; }
       .jb-box { width: 100%; height: 600px; overflow: hidden;margin: 0px auto; position: relative; }
-      iframe { width: 80%; }
+       iframe { width: 80%; }
       .jb-text { position: absolute; top: 50%; width: 100%; }
       .jb-text p { margin-top: -24px; text-align: center; font-size: 48px; color: #ffffff; }
 </style>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -65,8 +64,7 @@
                               href="<%=request.getContextPath()%>/movie/category.movie">영화 목록</a></li>                                        
                            <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/movie/cart.cart">Shopping Cart</a></li>
                         </ul>
-                     </li>
-                     
+                    	</li>
                         <li class="nav-item submenu dropdown"><a href="#"
                         class="nav-link dropdown-toggle" data-toggle="dropdown"
                         role="button" aria-haspopup="true" aria-expanded="false">드라마</a>
@@ -76,8 +74,7 @@
                           
                            <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/drama/cart.cart">Shopping Cart</a></li>
                         </ul>
-                     </li>
-                                          
+                     </li>                    
 							<li class="nav-item submenu dropdown"><a href="#"
 								class="nav-link dropdown-toggle" data-toggle="dropdown"
 								role="button" aria-haspopup="true" aria-expanded="false">게시판</a>
@@ -98,15 +95,13 @@
 							</li>
 							<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/contact.jsp">Contact</a></li>
 						</ul>
-
 						<ul class="nav-shop">
 							
 							<li class="nav-item"><button>
-									<i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span>
-								</button></li>
-							
+									<i class="ti-shopping-cart"></i><span class="nav-shop__circle"></span>
+								</button></li>							
 							<%
-							if(session.getAttribute("user_email")==null) {
+								if(session.getAttribute("user_email")==null) {
 							%>
 								<li class="nav-item"><a class="button button-header"
 								href="<%=request.getContextPath()%>/member/login.member">Login</a></li>
@@ -114,9 +109,9 @@
 							} else {
 							%>	
 								<li class="nav-item"><a class="button button-header"
-										href="<%=request.getContextPath()%>/member/logout.member">[<%=session.getAttribute("user_name") %>]님 Logout</a></li>
+								href="<%=request.getContextPath()%>/member/logout.member">[<%=session.getAttribute("user_name") %>]님 Logout</a></li>
 							<%
-							}
+								}
 							%>
 						</ul>
 					</div>
@@ -124,4 +119,3 @@
 			</nav>
 		</div>
 	</header>
-	<!--================ End Header Menu Area =================-->

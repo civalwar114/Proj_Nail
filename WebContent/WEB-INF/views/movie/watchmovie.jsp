@@ -31,7 +31,7 @@ MovieDTO dto = new MovieDTO();
                       
             </ol>
           </nav>         
-          <p>test watch test movie</p>  
+          
   
 			</div>
 
@@ -42,12 +42,28 @@ MovieDTO dto = new MovieDTO();
 									<!-- 서브타이틀 정도로 쓰기 -->
 					
    
- 		<a class="button button-blog" >다운로드</a>
+ 	
    
    
    
   </div>
-   
+   					<div class="text-center">
+	<div class="jb-box">
+      
+  	<iframe width="100%" height="100%" src="https://www.youtube.com/embed/XUhRA_ObaDo" 
+		title="YouTube video player" frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+	</iframe>
+     
+      <div class="jb-text">
+      
+      </div>
+    </div>			
+	
+						<p>　</p>
+						 <a class="button button-blog" >다운로드</a>
+						 <p>　</p>
+   </div>	
    
    
 			</div>   

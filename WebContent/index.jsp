@@ -17,8 +17,6 @@
       
       </div>
     </div>
-
-
 	<p>　</p>
 	<p>　</p>
 	<p>　</p>
@@ -53,13 +51,11 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-
 	<p>　</p>
 	<p>　</p>
 	<p>　</p>
 	
-<h1> 임시 게시판 </h1>
+	<h1> 임시 임시 임시 </h1>
 
 
 </div>
@@ -67,4 +63,3 @@
 
 
 <%@ include file="/inc/bottom.jsp" %>
- 

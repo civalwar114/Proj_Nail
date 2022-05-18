@@ -4,18 +4,13 @@
     <%@ include file="/inc/top.jsp"%>
     <%@page import="java.util.ArrayList"%>
     <%@page import="kr.siat.model.dramaDTO"%>
-  
-  
+    
     <%
-ArrayList<dramaDTO> list = new ArrayList<dramaDTO>();
-list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
-%>
-    
-    
-    
+		ArrayList<dramaDTO> list = new ArrayList<dramaDTO>();
+		list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
+	%>
 
-<!-- ================ start banner area ================= -->	
-		<p>　</p>
+	<p>　</p>
 	<p>　</p>
 	<p>　</p>
 		<div class="container h-100">
@@ -24,18 +19,13 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
 					<p>　</p>
 					<h1>Drama Category</h1>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-           		 <ol class="breadcrumb">
-              
+           		 <ol class="breadcrumb">              
               <li class="breadcrumb-item active" aria-current="page">드라마목록</li>
             </ol>
           </nav>
-				</div>
 			</div>
-    </div>
-	
-	<!-- ================ end banner area ================= -->
-	
-		<!-- ================ category section start ================= -->		  
+			</div>
+    </div>	  
   <section class="section-margin--small mb-5">
     <div class="container">
       <div class="row">
@@ -83,8 +73,7 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
                   <li class="filter-list"><input class="pixel-radio" type="radio" id="HKG" name="country"><label for="HKG">홍콩<span></span></label></li>
                 </ul>
               </form>
-            </div>
-      
+            </div>      
             <div class="common-filter">
               <div class="head">Price</div>
               <div class="price-range-area">
@@ -106,12 +95,11 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
           <div class="filter-bar d-flex flex-wrap align-items-center">
             <div class="sorting">
               <select>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
+                <option value="1">제목</option>
+                <option value="2">배급</option>
+                <option value="3">국가</option>
               </select>
             </div>
-
             <div>            
               <div class="input-group filter-bar-search">
               </div>
@@ -119,33 +107,24 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
             <form class="form-inline my-2 my-lg-0" action="search.drama" method="POST">
       			<input class="form-control mr-sm-2" type="text" name="searchtext" placeholder="Search">
      			 <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-  				</form>
-           
+  				</form>           
             </div>           
           </div>
-          <!-- End Filter Bar -->
-          <!-- Start Best Seller -->
-          
-          
           <section class="lattest-product-area pb-40 category-list">
-            <div class="row">
-            
+            <div class="row">            
             <c:forEach var="drama" items="${dramaList}">
               <div class="col-md-6 col-lg-4">
                 <div class="card text-center card-product">
                 <!-- 이미지 오버레이  -->
-                  <div class="card-product__img">
-              
+                  <div class="card-product__img">              
                     <img class="card-img" src=  "<%=request.getContextPath()%>/inc/img/product/movieNum2.jpg">
-                    <ul class="card-product__imgOverlay">
-                     
+                    <ul class="card-product__imgOverlay">                     
                       <li><button><i class="ti-shopping-cart"></i></button></li>
                       <li><button><i class="ti-heart"></i></button></li>
                     </ul>
                   </div>
-                <div class="card-body">
-                   <!-- 여기에 영화 목록 받아 오기 -->                
-                   	
+               		 <div class="card-body">
+                   <!-- 여기에 영화 목록 받아 오기 -->                                   	
 					<a href="detail.drama?num=${drama.dramaNum}">${drama.dramaTitle}</a>
                     <p>${drama.dramaPrice}원</p>
                     <a class="button button-blog" href="watchdrama.drama?num=${drama.dramaNum}">바로보기</a>                                                    
@@ -153,15 +132,10 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
                 </div>
               </div>
             </c:forEach> 
-            </div>
-            
-        
-            
-          </section>
-          <!-- End Best Seller -->
-          
+            </div>            
+          </section>          
           <%
-          if(session.getAttribute("user_email")!=null) {
+          	  if(session.getAttribute("user_email")!=null) {
         	  if((Integer)session.getAttribute("user_type")==0) {
         	%>
 	        	<aside class="single_sidebar_widget author_widget">
@@ -170,17 +144,10 @@ list = (ArrayList<dramaDTO>) request.getAttribute("dramaList");
 	            </aside>
 	        <%
         	  }
-          }
+          	  }
           %>
-          
-          
-          
-          
         </div>
       </div>
     </div>
   </section>
-	<!-- ================ category section end ================= -->		  
-	
-	  
 <%@ include file="/inc/bottom.jsp"%>
