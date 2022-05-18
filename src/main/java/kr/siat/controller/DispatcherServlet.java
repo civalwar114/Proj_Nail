@@ -16,16 +16,13 @@ public class DispatcherServlet extends HttpServlet{
 	
 	private void process(HttpServletRequest req, HttpServletResponse resp) {
 		String ctxPath = req.getContextPath();
-		String reqUri = req.getRequestURI();
-		
+		String reqUri = req.getRequestURI();		
 		int startIndex = ctxPath.length();
-		int endIndex = reqUri.indexOf(".");
-		
+		int endIndex = reqUri.indexOf(".");		
 		String path = reqUri.substring(startIndex, endIndex);
 		String menu = path.substring(0,path.indexOf("/", 1));
 		String function = path.substring(path.indexOf("/",1));
-		
-		System.out.println("DispatcherServlet menu : " + menu);						// 정상 출력 (/bbs)
+		System.out.println("DispatcherServlet menu : " + menu);							// 정상 출력 (/bbs)
 		System.out.println("DIspatcherServlet function : " + function);					// 정상 출력 (/list)
 		
 		req.setAttribute("service", function);

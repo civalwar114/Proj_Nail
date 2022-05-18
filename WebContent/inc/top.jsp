@@ -95,11 +95,11 @@
 							</li>
 							<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/contact.jsp">Contact</a></li>
 						</ul>
-						<ul class="nav-shop">
-							
-							<li class="nav-item"><button>
-									<i class="ti-shopping-cart"></i><span class="nav-shop__circle"></span>
+						<ul class="nav-shop">							
+							<li class="nav-item" ><button>
+									<i class="ti-shopping-cart" ></i><span class="nav-shop__circle" ></span>
 								</button></li>							
+							
 							<%
 								if(session.getAttribute("user_email")==null) {
 							%>
