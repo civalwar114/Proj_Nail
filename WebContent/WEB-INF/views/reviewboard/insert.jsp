@@ -51,7 +51,42 @@ list = (ArrayList<BoardDTO>) request.getAttribute("boardList");
 				<textarea class="form-control" id="content" name="content" rows="5"></textarea>
 			</div>
 			<button type="submit" class="btn btn-primary">작성</button>
+<<<<<<< Updated upstream
 		</form>
+=======
+		</form> -->
+		<div class="container" style="margin: 30px 30px; padding: 30px 30px;">
+			<form action="insert.board" method="post">
+				<input type="hidden" name="userEmail" value="<%=session.getAttribute("user_email")%>">
+				<div class="form-group">
+					<label for="email">글 작성자</label> <input type="text"
+						class="form-control" id="user_name" name="user_name"
+						value="<%=session.getAttribute("user_name")%>" readonly>
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlSelect1">리뷰할 영상 제목</label><br> 
+					<select name="videoName" class="form-control" id="exampleFormControlSelect1">
+						<option>어벤져스 : 엔드게임</option>
+						<option>범죄도시 2</option>
+						<option>배드 가이즈</option>
+						<option>그대가 조국</option>
+						<option>여자의 노래</option>
+					</select>
+				</div><br><br>
+				<div class="form-group">
+					<label for="email">글 제목</label> <input type="text"
+						class="form-control" id="title" placeholder="글 제목을 입력해주세요."
+						name="title">
+				</div>
+				<div class="form-group">
+					<label for="pwd">리뷰 내용</label>
+					<textarea class="form-control" id="content" name="content" rows="5"
+						placeholder="글 내용을 입력해주세요."></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">작성 완료</button>
+			</form>
+		</div>
+>>>>>>> Stashed changes
 	</div>
 </div>
 
